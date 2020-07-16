@@ -13,6 +13,10 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "posts": {
+      "via": "category",
+      "collection": "post"
     }
   }
 }
