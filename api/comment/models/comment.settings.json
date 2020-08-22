@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "name": "Comment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "post": {
+      "model": "post",
+      "via": "comments"
+    },
+    "comment": {
+      "via": "comments",
+      "columnName": "parent",
+      "model": "comment"
+    },
+    "comments": {
+      "via": "comment",
+      "columnName": "children",
+      "collection": "comment"
+    },
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
